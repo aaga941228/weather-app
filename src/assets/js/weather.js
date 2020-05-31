@@ -11,7 +11,7 @@ class Weather {
     return data;
   }
 
-  changeLocation(city) {
+  setLocation(city) {
     this.city = city;
   }
 }

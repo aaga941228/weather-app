@@ -9,8 +9,15 @@ const ui = new Ui();
 
 async function fetchWeather() {
   const data = await weather.getWeather();
-  console.log(data);
   ui.render(data);
 }
 
-fetchWeather();
+document.getElementById("w-change-btn").addEventListener("click", (e) => {
+  e.preventDefault();
+  const city = document.querySelector("#city").value;
+  weather.setLocation(city);
+  store.setLocation(city);
+  fetchWeather();
+});
+
+document.addEventListener("DOMContentLoaded", fetchWeather);
