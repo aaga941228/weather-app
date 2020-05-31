@@ -9,13 +9,11 @@ class Store {
     } else {
       this.city = localStorage.getItem("city");
     }
-    return {
-      city: this.city,
-    };
+    return this.city;
   }
 
   setLocation(city) {
-    localStorage("city", city);
+    localStorage.setItem("city", city);
   }
 }
 
